@@ -6,6 +6,11 @@ const port = 3000;
 
 app.use(express.json());
 
+app.get('/', (req, res) => {
+  res.send('¡Bienvenido a la aplicación de temperatura! Visita /temperatura?ciudad=FORMOSA para obtener la temperatura de FORMOSA,especificar que ciudad quieres cambiando FORMOSA por tu ciudad..');
+});
+
+
 app.get('/temperatura', async (req, res) => {
   const ciudad = req.query.ciudad;
   if (!ciudad) {
